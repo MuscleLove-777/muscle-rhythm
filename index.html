@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>筋肉リズム / Muscle Rhythm - MuscleLove</title>
+<meta name="description" content="筋肉リズムゲーム！ノーツが落ちてくるリズムに合わせてタップ！MuscleLove Rhythm Game!">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+
+<!-- Title Screen Overlay -->
+<div id="titleScreen" class="overlay">
+  <div class="title-content">
+    <h1 class="game-title">筋肉リズム</h1>
+    <p class="game-subtitle">Muscle Rhythm</p>
+    <div class="title-desc">
+      <p>リズムに合わせてノーツをタップ！</p>
+      <p class="en-small">Tap notes to the rhythm!</p>
+    </div>
+    <div class="controls-info">
+      <p>🎹 操作 / Controls</p>
+      <div class="key-guide">
+        <span class="key">D</span>
+        <span class="key">F</span>
+        <span class="key">J</span>
+        <span class="key">K</span>
+      </div>
+      <p class="en-small">またはレーンをタップ / or tap the lanes</p>
+    </div>
+    <div class="timing-info">
+      <p><span class="perfect-text">Perfect</span> ±50ms = 100pts</p>
+      <p><span class="great-text">Great</span> ±100ms = 50pts</p>
+      <p><span class="good-text">Good</span> ±200ms = 25pts</p>
+      <p><span class="miss-text">Miss</span> = 0pts 💔</p>
+    </div>
+    <button id="startBtn" class="neon-btn">START</button>
+    <div class="brand-links">
+      <a href="https://www.patreon.com/cw/MuscleLove" target="_blank" class="patreon-link">
+        ❤️ Support on Patreon
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Result Screen Overlay -->
+<div id="resultScreen" class="overlay" style="display:none;">
+  <div class="result-content">
+    <h2 class="result-title">リザルト<br><span class="en-small">Results</span></h2>
+    <div id="rankDisplay" class="rank-display"></div>
+    <div class="result-stats">
+      <div class="stat-row">
+        <span>スコア / Score</span>
+        <span id="finalScore">0</span>
+      </div>
+      <div class="stat-row">
+        <span>最大コンボ / Max Combo</span>
+        <span id="finalCombo">0</span>
+      </div>
+      <div class="stat-row">
+        <span>正確度 / Accuracy</span>
+        <span id="finalAccuracy">0%</span>
+      </div>
+      <div class="timing-breakdown">
+        <div class="timing-row perfect-text">
+          <span>Perfect</span><span id="perfectCount">0</span>
+        </div>
+        <div class="timing-row great-text">
+          <span>Great</span><span id="greatCount">0</span>
+        </div>
+        <div class="timing-row good-text">
+          <span>Good</span><span id="goodCount">0</span>
+        </div>
+        <div class="timing-row miss-text">
+          <span>Miss</span><span id="missCount">0</span>
+        </div>
+      </div>
+    </div>
+    <div class="result-buttons">
+      <button id="shareBtn" class="neon-btn share-btn">
+        𝕏 シェア / Share
+      </button>
+      <button id="retryBtn" class="neon-btn">もう一度 / Retry</button>
+    </div>
+    <div class="brand-links">
+      <a href="https://www.patreon.com/cw/MuscleLove" target="_blank" class="patreon-link">
+        ❤️ Support on Patreon
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
